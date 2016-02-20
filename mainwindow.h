@@ -6,6 +6,8 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderWindowInteractor.h>
 #include <vtkRenderer.h>
+#include "MIViewImage.h"
+#include "OpenFileDialog.h"
 
 namespace Ui {
 class MainWindow;

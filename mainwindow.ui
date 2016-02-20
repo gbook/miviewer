@@ -122,16 +122,10 @@
    <property name="text">
     <string>Exit</string>
    </property>
-   <property name="shortcut">
-    <string>X</string>
-   </property>
   </action>
   <action name="action_About">
    <property name="text">
     <string>About...</string>
-   </property>
-   <property name="shortcut">
-    <string>A</string>
    </property>
   </action>
  </widget>

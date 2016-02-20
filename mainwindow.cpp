@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "MIViewImage.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -21,6 +20,6 @@ void MainWindow::on_mnuFileExit_triggered()
 
 void MainWindow::on_action_Open_triggered()
 {
-    QStringList fileNames = QFileDialog::getOpenFileNames(this, tr("Open DICOM/ACR/NEMA"), "", tr("DICOM files (*.dcm *.acr *.dicom *.IMG *.nema)"));
-
+    OpenFileDialog *fileOpen = new OpenFileDialog(this);
+    fileOpen->show();
 }

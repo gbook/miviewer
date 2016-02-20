@@ -15,12 +15,15 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    MIViewImage.cpp
+    MIViewImage.cpp \
+    OpenFileDialog.cpp
 
 HEADERS  += mainwindow.h \
-    MIViewImage.h
+    MIViewImage.h \
+    OpenFileDialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    openfiledialog.ui
 
 win32 {
     INCLUDEPATH += D:\VTK\VTK-7.0.0\GUISupport\Qt

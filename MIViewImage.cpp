@@ -10,6 +10,6 @@ MIViewImage::~MIViewImage()
 
 }
 
-MIViewImage::SetFilenames(QStringList filenames) {
-
+int MIViewImage::SetFilenames(QStringList filenames) {
+    return 1;
 }
