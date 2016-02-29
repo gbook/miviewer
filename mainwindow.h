@@ -30,6 +30,8 @@ private slots:
 
     void on_action_Open_triggered();
 
+    void on_btnAddImage_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

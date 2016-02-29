@@ -171,3 +171,6 @@ LIBS += -lQVTKWidgetPlugin \
         -lvtksys-7.0 \
         -lvtkfreetype-7.0 \
         -lvtkzlib-7.0
+
+RESOURCES += \
+    miviewer.qrc

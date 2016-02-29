@@ -1,5 +1,6 @@
 #include "OpenFileDialog.h"
 #include "ui_openfiledialog.h"
+#include <QFileDialog>
 
 OpenFileDialog::OpenFileDialog(QWidget *parent) :
     QDialog(parent),
@@ -13,7 +14,27 @@ OpenFileDialog::~OpenFileDialog()
     delete ui;
 }
 
-void OpenFileDialog::on_buttonBox_2_accepted()
+QStringList OpenFileDialog::GetFilenames() {
+    return filenames;
+}
+
+void OpenFileDialog::on_btnSelectFiles_clicked()
 {
+    QFileDialog dialog(this);
+    dialog.setDirectory(QDir::homePath());
+    dialog.setFileMode(QFileDialog::ExistingFiles);
+    dialog.setNameFilter(trUtf8("DICOM (*.dcm *.acr *.nema *.img)"));
+    if (dialog.exec())
+        filenames = dialog.selectedFiles();
+}
+
+void OpenFileDialog::on_btnDialogs_accepted()
+{
+    this->close();
+}
+
+void OpenFileDialog::on_btnDialogs_rejected()
+{
+    filenames.clear();
     this->close();
 }

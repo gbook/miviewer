@@ -11,7 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Open file(s)...</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
@@ -32,7 +35,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="btnSelectFiles">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -43,7 +46,7 @@
           <string>Choose Files...</string>
          </property>
          <property name="text">
-          <string>Choose Files...</string>
+          <string>Select File(s)...</string>
          </property>
         </widget>
        </item>
@@ -239,7 +242,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QDialogButtonBox" name="buttonBox_2">
+    <widget class="QDialogButtonBox" name="btnDialogs">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>

@@ -21,5 +21,15 @@ void MainWindow::on_mnuFileExit_triggered()
 void MainWindow::on_action_Open_triggered()
 {
     OpenFileDialog *fileOpen = new OpenFileDialog(this);
-    fileOpen->show();
+    if (fileOpen->exec()) {
+        QStringList filenames = fileOpen->GetFilenames();
+    }
+}
+
+void MainWindow::on_btnAddImage_clicked()
+{
+    OpenFileDialog *fileOpen = new OpenFileDialog(this);
+    if (fileOpen->exec()) {
+        QStringList filenames = fileOpen->GetFilenames();
+    }
 }

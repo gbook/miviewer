@@ -15,8 +15,16 @@ public:
     explicit OpenFileDialog(QWidget *parent = 0);
     ~OpenFileDialog();
 
+    QStringList GetFilenames();
+
+    QStringList filenames;
+
 private slots:
-    void on_buttonBox_2_accepted();
+    void on_btnSelectFiles_clicked();
+
+    void on_btnDialogs_accepted();
+
+    void on_btnDialogs_rejected();
 
 private:
     Ui::OpenFileDialog *ui;
