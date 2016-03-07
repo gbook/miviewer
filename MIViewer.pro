@@ -26,18 +26,18 @@ FORMS    += mainwindow.ui \
     openfiledialog.ui
 
 win32 {
-    INCLUDEPATH += D:\VTK\VTK-7.0.0\GUISupport\Qt
-    INCLUDEPATH += D:\VTK\VTK-7.0.0\Common\Core
-    INCLUDEPATH += D:\VTK\VTK-7.0.0\Rendering\Core
+    INCLUDEPATH += C:\VTK\VTK-7.0.0\GUISupport\Qt
+    INCLUDEPATH += C:\VTK\VTK-7.0.0\Common\Core
+    INCLUDEPATH += C:\VTK\VTK-7.0.0\Rendering\Core
 }
 
 win32-msvc2013 {
-    INCLUDEPATH += D:\VTK\vtk32\GUISupport\Qt
-    INCLUDEPATH += D:\VTK\vtk32\Interaction\Style
-    INCLUDEPATH += D:\VTK\vtk32\Rendering\Core
-    INCLUDEPATH += D:\VTK\vtk32\Rendering\OpenGL2
-    INCLUDEPATH += D:\VTK\vtk32\Common\Core
-    LIBS += -LD:\VTK\vtk32\lib\Release
+    INCLUDEPATH += C:\VTK\vtkbin\GUISupport\Qt
+    INCLUDEPATH += C:\VTK\vtkbin\Interaction\Style
+    INCLUDEPATH += C:\VTK\vtkbin\Rendering\Core
+    INCLUDEPATH += C:\VTK\vtkbin\Rendering\OpenGL2
+    INCLUDEPATH += C:\VTK\vtkbin\Common\Core
+    LIBS += -LC:\VTK\vtkbin\lib\Release
 }
 
 win32-msvc2013_64 {
@@ -93,7 +93,6 @@ LIBS += -lQVTKWidgetPlugin \
         -lvtkIOParallelXML-7.0 \
         -lvtkIOPLY-7.0 \
         -lvtkIOVideo-7.0 \
-        -lvtkLocalExample-7.0 \
         -lvtkRenderingContextOpenGL2-7.0 \
         -lvtkRenderingImage-7.0 \
         -lvtkRenderingLOD-7.0 \

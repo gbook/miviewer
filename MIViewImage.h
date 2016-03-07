@@ -9,7 +9,10 @@ public:
     MIViewImage();
     ~MIViewImage();
 
-    int SetFilenames(QStringList filenames);
+    void SetFilenames(QStringList fnames);
+
+private:
+    QStringList filenames;
 
 };
 

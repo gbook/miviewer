@@ -23,17 +23,10 @@
       <number>6</number>
      </property>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0">
+      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0">
        <property name="bottomMargin">
         <number>0</number>
        </property>
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Choose files --&gt;</string>
-         </property>
-        </widget>
-       </item>
        <item>
         <widget class="QPushButton" name="btnSelectFiles">
          <property name="maximumSize">
@@ -47,6 +40,13 @@
          </property>
          <property name="text">
           <string>Select File(s)...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblNumSelectedFiles">
+         <property name="text">
+          <string/>
          </property>
         </widget>
        </item>
@@ -77,35 +77,38 @@
             <number>3</number>
            </property>
            <item>
-            <widget class="QRadioButton" name="radioButton_5">
+            <widget class="QRadioButton" name="radAutoDetect">
              <property name="text">
               <string>Auto-detect</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QRadioButton" name="radioButton">
+            <widget class="QRadioButton" name="radDICOM">
              <property name="text">
               <string>DICOM, ACR//NEMA</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QRadioButton" name="radioButton_3">
+            <widget class="QRadioButton" name="radNifti">
              <property name="text">
               <string>Nifti, Analyze</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QRadioButton" name="radioButton_4">
+            <widget class="QRadioButton" name="radParRec">
              <property name="text">
               <string>PAR/REC (Phillips)</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QRadioButton" name="radioButton_2">
+            <widget class="QRadioButton" name="radImage">
              <property name="text">
               <string>Image (jpeg, png, gif, etc)</string>
              </property>
@@ -140,7 +143,10 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
-            <widget class="QGroupBox" name="groupBox_4">
+            <widget class="QGroupBox" name="chkMosaic">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Some images are mosaic, especially Siemens 4D data. Each slice of the timeseries is actually one 3D volume. Enter parameters here to split up the 2D images into correctly sized 3D volumes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="title">
               <string>Mosaic</string>
              </property>
@@ -173,7 +179,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QSpinBox" name="spinBox"/>
+                 <widget class="QSpinBox" name="mosaicXdim"/>
                 </item>
                 <item>
                  <widget class="QLabel" name="label_3">
@@ -192,7 +198,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QSpinBox" name="spinBox_2"/>
+                 <widget class="QSpinBox" name="mosaicYdim"/>
                 </item>
                 <item>
                  <widget class="QLabel" name="label_4">
@@ -211,7 +217,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QSpinBox" name="spinBox_3"/>
+                 <widget class="QSpinBox" name="mosaicZdim"/>
                 </item>
                </layout>
               </item>
@@ -233,7 +239,7 @@
            </item>
           </layout>
           <zorder>verticalSpacer_2</zorder>
-          <zorder>groupBox_4</zorder>
+          <zorder>chkMosaic</zorder>
          </widget>
         </item>
        </layout>
