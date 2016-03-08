@@ -16,7 +16,9 @@ public:
     ~OpenFileDialog();
 
     QStringList GetFilenames();
+    QHash<QString, int> GetLoadParams();
 
+    QHash<QString, int> loadParams;
     QStringList filenames;
 
 private slots:

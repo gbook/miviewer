@@ -29,6 +29,8 @@ win32 {
     INCLUDEPATH += C:\VTK\VTK-7.0.0\GUISupport\Qt
     INCLUDEPATH += C:\VTK\VTK-7.0.0\Common\Core
     INCLUDEPATH += C:\VTK\VTK-7.0.0\Rendering\Core
+    INCLUDEPATH += C:\VTK\VTK-7.0.0\IO\Image
+    INCLUDEPATH += C:\VTK\VTK-7.0.0\Common\ExecutionModel
 }
 
 win32-msvc2013 {
@@ -37,6 +39,8 @@ win32-msvc2013 {
     INCLUDEPATH += C:\VTK\vtkbin\Rendering\Core
     INCLUDEPATH += C:\VTK\vtkbin\Rendering\OpenGL2
     INCLUDEPATH += C:\VTK\vtkbin\Common\Core
+    INCLUDEPATH += C:\VTK\vtkbin\IO\Image
+    INCLUDEPATH += C:\VTK\vtkbin\Common\ExecutionModel
     LIBS += -LC:\VTK\vtkbin\lib\Release
 }
 
