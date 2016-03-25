@@ -1,23 +1,41 @@
 #include "MIViewImage.h"
 
+/* ---------------------------------------------- */
+/* ---------- MIViewImage ----------------------- */
+/* ---------------------------------------------- */
 MIViewImage::MIViewImage()
 {
 
 }
 
+/* ---------------------------------------------- */
+/* ---------- ~MIViewImage ---------------------- */
+/* ---------------------------------------------- */
 MIViewImage::~MIViewImage()
 {
 
 }
 
+
+/* ---------------------------------------------- */
+/* ---------- SetFilenames ---------------------- */
+/* ---------------------------------------------- */
 void MIViewImage::SetFilenames(QStringList fnames) {
     filenames = fnames;
 }
 
+
+/* ---------------------------------------------- */
+/* ---------- SetLoadParams --------------------- */
+/* ---------------------------------------------- */
 void MIViewImage::SetLoadParams(QHash<QString, int> params) {
     loadParams = params;
 }
 
+
+/* ---------------------------------------------- */
+/* ---------- Load ------------------------------ */
+/* ---------------------------------------------- */
 QString MIViewImage::Load() {
     /* determine type */
     if (loadParams.value("typeauto")) {
@@ -29,6 +47,10 @@ QString MIViewImage::Load() {
     return "";
 }
 
+
+/* ---------------------------------------------- */
+/* ---------- LoadDICOM ------------------------- */
+/* ---------------------------------------------- */
 QString MIViewImage::LoadDICOM() {
     vtkSmartPointer<vtkStringArray> files = vtkSmartPointer<vtkStringArray>::New();
     files->SetNumberOfValues(filenames.count());

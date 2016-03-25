@@ -2,6 +2,9 @@
 #include "ui_openfiledialog.h"
 #include <QFileDialog>
 
+/* ---------------------------------------------- */
+/* ---------- OpenFileDialog -------------------- */
+/* ---------------------------------------------- */
 OpenFileDialog::OpenFileDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::OpenFileDialog)
@@ -9,19 +12,35 @@ OpenFileDialog::OpenFileDialog(QWidget *parent) :
     ui->setupUi(this);
 }
 
+
+/* ---------------------------------------------- */
+/* ---------- ~OpenFileDialog ------------------- */
+/* ---------------------------------------------- */
 OpenFileDialog::~OpenFileDialog()
 {
     delete ui;
 }
 
+
+/* ---------------------------------------------- */
+/* ---------- GetFilenames ---------------------- */
+/* ---------------------------------------------- */
 QStringList OpenFileDialog::GetFilenames() {
     return filenames;
 }
 
+
+/* ---------------------------------------------- */
+/* ---------- GetLoadParams --------------------- */
+/* ---------------------------------------------- */
 QHash<QString, int> OpenFileDialog::GetLoadParams() {
     return loadParams;
 }
 
+
+/* ---------------------------------------------- */
+/* ---------- on_btnSelectFiles_clicked --------- */
+/* ---------------------------------------------- */
 void OpenFileDialog::on_btnSelectFiles_clicked()
 {
     QFileDialog dialog(this);
@@ -50,11 +69,19 @@ void OpenFileDialog::on_btnSelectFiles_clicked()
     }
 }
 
+
+/* ---------------------------------------------- */
+/* ---------- on_btnDialogs_accepted ------------ */
+/* ---------------------------------------------- */
 void OpenFileDialog::on_btnDialogs_accepted()
 {
     this->close();
 }
 
+
+/* ---------------------------------------------- */
+/* ---------- on_btnDialogs_rejected ------------ */
+/* ---------------------------------------------- */
 void OpenFileDialog::on_btnDialogs_rejected()
 {
     filenames.clear();
