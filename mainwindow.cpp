@@ -10,6 +10,15 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    //renderer = vtkSmartPointer<vtkRenderer>::New();
+    imageViewer = vtkSmartPointer<vtkImageViewer2>::New();
+
+    renderWindowInteractor = vtkSmartPointer<vtkRenderWindowInteractor>::New();
+    imageViewer->SetupInteractor(renderWindowInteractor);
+
+    // VTK/Qt wedded
+    ui->qvtkWidget->GetRenderWindow()->AddRenderer(renderWindowInteractor);
 }
 
 
@@ -62,9 +71,19 @@ void MainWindow::LoadImage() {
             QHash<QString, int> loadParams = fileOpen->GetLoadParams();
             MIViewImage *img = new MIViewImage();
             img->SetFilenames(filenames);
+            img->SetLoadParams(loadParams);
             images.append(*img);
+
             /* try to load the image */
             QString msg = images.last().Load();
+
+            /* now render the image on the vtkImageViewer */
+            imageViewer->SetInputConnection(images.last().reader->GetOutputPort());
+            imageViewer->Render();
+            imageViewer->GetRenderer()->ResetCamera();
+            imageViewer->Render();
+
+            renderWindowInteractor->Start();
         }
     }
 }

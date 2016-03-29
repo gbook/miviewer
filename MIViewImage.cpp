@@ -57,7 +57,6 @@ QString MIViewImage::LoadDICOM() {
     for (int i=0; i< filenames.size(); i++) {
         files->SetValue(i,filenames.at(i).toLatin1().toStdString().c_str());
     }
-    vtkSmartPointer<vtkDICOMImageReader> reader = vtkSmartPointer<vtkDICOMImageReader>::New();
     reader->SetFileNames(files);
     reader->Update();
 

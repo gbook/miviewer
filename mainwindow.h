@@ -7,6 +7,7 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderWindowInteractor.h>
 #include <vtkRenderer.h>
+#include <vtkImageViewer2.h>
 #include "MIViewImage.h"
 #include "OpenFileDialog.h"
 
@@ -21,6 +22,11 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+    /* the VTK renderer */
+    //vtkSmartPointer<vtkRenderer> renderer;
+    vtkSmartPointer<vtkImageViewer2> imageViewer;
+    vtkSmartPointer<vtkRenderWindowInteractor> renderWindowInteractor;
 
     /* list of images */
     QList<MIViewImage> images;

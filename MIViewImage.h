@@ -17,6 +17,7 @@ public:
     void SetFilenames(QStringList fnames);
     void SetLoadParams(QHash<QString, int> params);
     QString Load();
+    vtkSmartPointer<vtkDICOMImageReader> reader = vtkSmartPointer<vtkDICOMImageReader>::New();
 
 private:
     QStringList filenames;

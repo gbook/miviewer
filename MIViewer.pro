@@ -26,22 +26,34 @@ FORMS    += mainwindow.ui \
     openfiledialog.ui
 
 win32 {
-    INCLUDEPATH += C:\VTK\VTK-7.0.0\GUISupport\Qt
-    INCLUDEPATH += C:\VTK\VTK-7.0.0\Common\Core
-    INCLUDEPATH += C:\VTK\VTK-7.0.0\Rendering\Core
-    INCLUDEPATH += C:\VTK\VTK-7.0.0\IO\Image
-    INCLUDEPATH += C:\VTK\VTK-7.0.0\Common\ExecutionModel
+    INCLUDEPATH += D:\VTK\VTK-7.0.0\GUISupport\Qt
+    INCLUDEPATH += D:\VTK\VTK-7.0.0\Common\Core
+    INCLUDEPATH += D:\VTK\VTK-7.0.0\Rendering\Core
+    INCLUDEPATH += D:\VTK\VTK-7.0.0\IO\Image
+    INCLUDEPATH += D:\VTK\VTK-7.0.0\Common\ExecutionModel
+    INCLUDEPATH += D:\VTK\VTK-7.0.0\Interaction\Image
 }
 
 win32-msvc2013 {
-    INCLUDEPATH += C:\VTK\vtkbin\GUISupport\Qt
-    INCLUDEPATH += C:\VTK\vtkbin\Interaction\Style
-    INCLUDEPATH += C:\VTK\vtkbin\Rendering\Core
-    INCLUDEPATH += C:\VTK\vtkbin\Rendering\OpenGL2
-    INCLUDEPATH += C:\VTK\vtkbin\Common\Core
-    INCLUDEPATH += C:\VTK\vtkbin\IO\Image
-    INCLUDEPATH += C:\VTK\vtkbin\Common\ExecutionModel
-    LIBS += -LC:\VTK\vtkbin\lib\Release
+    INCLUDEPATH += D:\VTK\vtk32\GUISupport\Qt
+    INCLUDEPATH += D:\VTK\vtk32\Interaction\Style
+    INCLUDEPATH += D:\VTK\vtk32\Rendering\Core
+    INCLUDEPATH += D:\VTK\vtk32\Rendering\OpenGL2
+    INCLUDEPATH += D:\VTK\vtk32\Common\Core
+    INCLUDEPATH += D:\VTK\vtk32\IO\Image
+    INCLUDEPATH += D:\VTK\vtk32\Common\ExecutionModel
+    INCLUDEPATH += D:\VTK\vtk32\Interaction\Image
+    INCLUDEPATH += D:\VTK\vtk32\Interaction\Widgets
+    INCLUDEPATH += D:\VTK\vtk32\Filters\Hybrid
+    INCLUDEPATH += D:\VTK\vtk32\Filters\General
+    INCLUDEPATH += D:\VTK\vtk32\Filters\Core
+    INCLUDEPATH += D:\VTK\vtk32\Filters\Modeling
+    INCLUDEPATH += D:\VTK\vtk32\Filters\Sources
+    INCLUDEPATH += D:\VTK\vtk32\Imaging\Hybrid
+    INCLUDEPATH += D:\VTK\vtk32\Rendering\Annotation
+    INCLUDEPATH += D:\VTK\vtk32\Rendering\FreeType
+    INCLUDEPATH += D:\VTK\vtk32\Rendering\Volume
+    LIBS += -LD:\VTK\vtk32\lib\Release
 }
 
 win32-msvc2013_64 {
