@@ -11,14 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //renderer = vtkSmartPointer<vtkRenderer>::New();
-    imageViewer = vtkSmartPointer<vtkImageViewer2>::New();
-
-    renderWindowInteractor = vtkSmartPointer<vtkRenderWindowInteractor>::New();
-    imageViewer->SetupInteractor(renderWindowInteractor);
-
-    // VTK/Qt wedded
-    ui->qvtkWidget->GetRenderWindow()->AddRenderer(renderWindowInteractor);
+    renderer = vtkSmartPointer<vtkRenderer>::New();
 }
 
 
@@ -54,6 +47,7 @@ void MainWindow::on_action_Open_triggered()
 /* ---------------------------------------------- */
 void MainWindow::on_btnAddImage_clicked()
 {
+    cout<<"Hi there!"<<endl;
     LoadImage();
 }
 
@@ -62,11 +56,14 @@ void MainWindow::on_btnAddImage_clicked()
 /* ---------- LoadImage ------------------------- */
 /* ---------------------------------------------- */
 void MainWindow::LoadImage() {
+    cout<<"TestingA"<<endl;
     OpenFileDialog *fileOpen = new OpenFileDialog(this);
-    if (fileOpen->exec()) {
+    if (fileOpen->exec() == QDialog::Accepted) {
+        cout<<"TestingB"<<endl;
         /* check if they actually selected any filenames */
         QStringList filenames = fileOpen->GetFilenames();
         if (filenames.count() > 0) {
+            cout<<"TestingC"<<endl;
             /* get the loading parameters */
             QHash<QString, int> loadParams = fileOpen->GetLoadParams();
             MIViewImage *img = new MIViewImage();
@@ -78,12 +75,25 @@ void MainWindow::LoadImage() {
             QString msg = images.last().Load();
 
             /* now render the image on the vtkImageViewer */
+            imageViewer = vtkSmartPointer<vtkImageViewer2>::New();
             imageViewer->SetInputConnection(images.last().reader->GetOutputPort());
             imageViewer->Render();
             imageViewer->GetRenderer()->ResetCamera();
             imageViewer->Render();
 
-            renderWindowInteractor->Start();
+            imageViewer->GetRenderWindow()->GetInteractor()->Start();
+            //renderWindowInteractor->Start();
+
+
+            // VTK/Qt wedded
+            ui->qvtkWidget->SetRenderWindow(imageViewer->GetRenderWindow());
+            imageViewer->SetupInteractor(ui->qvtkWidget->GetInteractor());
+
+            ui->qvtkWidget->show();
+            cout<<"TestingD"<<endl;
         }
+    }
+    else {
+        cout<<"File dialog not successful?"<<endl;
     }
 }

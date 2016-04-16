@@ -24,9 +24,9 @@ public:
     ~MainWindow();
 
     /* the VTK renderer */
-    //vtkSmartPointer<vtkRenderer> renderer;
+    vtkSmartPointer<vtkRenderer> renderer;
     vtkSmartPointer<vtkImageViewer2> imageViewer;
-    vtkSmartPointer<vtkRenderWindowInteractor> renderWindowInteractor;
+    //vtkSmartPointer<vtkRenderWindowInteractor> renderWindowInteractor;
 
     /* list of images */
     QList<MIViewImage> images;
