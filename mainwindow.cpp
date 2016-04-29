@@ -70,6 +70,7 @@ void MainWindow::LoadImage() {
             img->SetFilenames(filenames);
             img->SetLoadParams(loadParams);
             images.append(*img);
+            cout<<"TestingC.1"<<endl;
 
             /* try to load the image */
             QString msg = images.last().Load();
@@ -80,14 +81,17 @@ void MainWindow::LoadImage() {
             imageViewer->Render();
             imageViewer->GetRenderer()->ResetCamera();
             imageViewer->Render();
+            cout<<"TestingC.2"<<endl;
 
             imageViewer->GetRenderWindow()->GetInteractor()->Start();
             //renderWindowInteractor->Start();
 
+            cout<<"TestingC.3"<<endl;
 
             // VTK/Qt wedded
             ui->qvtkWidget->SetRenderWindow(imageViewer->GetRenderWindow());
             imageViewer->SetupInteractor(ui->qvtkWidget->GetInteractor());
+            cout<<"TestingC.4"<<endl;
 
             ui->qvtkWidget->show();
             cout<<"TestingD"<<endl;

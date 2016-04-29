@@ -75,7 +75,8 @@ void OpenFileDialog::on_btnSelectFiles_clicked()
 /* ---------------------------------------------- */
 void OpenFileDialog::on_btnDialogs_accepted()
 {
-    this->close();
+    //this->close();
+    accept();
 }
 
 
@@ -85,5 +86,6 @@ void OpenFileDialog::on_btnDialogs_accepted()
 void OpenFileDialog::on_btnDialogs_rejected()
 {
     filenames.clear();
-    this->close();
+    //this->close();
+    reject();
 }

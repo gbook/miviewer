@@ -53,7 +53,8 @@ win32-msvc2013 {
     INCLUDEPATH += D:\VTK\vtk32\Rendering\Annotation
     INCLUDEPATH += D:\VTK\vtk32\Rendering\FreeType
     INCLUDEPATH += D:\VTK\vtk32\Rendering\Volume
-    LIBS += -LD:\VTK\vtk32\lib\Release
+    Release:LIBS += -LD:\VTK\vtk32\lib\Release
+    Debug:LIBS += -LD:\VTK\vtk32\lib\Debug
 }
 
 win32-msvc2013_64 {
@@ -62,7 +63,8 @@ win32-msvc2013_64 {
     INCLUDEPATH += D:\VTK\vtk64\Rendering\Core
     INCLUDEPATH += D:\VTK\vtk64\Rendering\OpenGL2
     INCLUDEPATH += D:\VTK\vtk64\Common\Core
-    LIBS += -LD:\VTK\vtk64\lib\Release
+    Release:LIBS += -LD:\VTK\vtk64\lib\Release
+    Debug:LIBS += -LD:\VTK\vtk64\lib\Debug
 }
 
 LIBS += -lQVTKWidgetPlugin \
